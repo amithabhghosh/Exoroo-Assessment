@@ -27,4 +27,13 @@ Like endpoint increments likes atomically.
 
 Basic validation and error handling ensure data integrity.
 
+Tech Stack
+React, Tailwind CSS
 
+Node.js, Express.js
+
+MongoDB, Mongoose
+
+Axios for HTTP requests
+
+Lucide-react for icons
