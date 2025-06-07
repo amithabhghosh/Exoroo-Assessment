@@ -27,4 +27,4 @@ Like endpoint increments likes atomically.
 
 Basic validation and error handling ensure data integrity.
 
-Static user info endpoint simulates user profile data for simplicity.
+
