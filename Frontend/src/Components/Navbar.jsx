@@ -109,43 +109,66 @@ const navigate = useNavigate()
   };
 
   return (
-    <nav className="flex items-center justify-between p-4 shadow-md transition-all duration-300 bg-white dark:bg-gray-900 grey:bg-greytheme">
-      <h1 className="text-2xl font-bold text-blue-600 dark:text-white grey:text-white">Exoroo</h1>
+   <nav className="flex items-center justify-between p-4 shadow-md transition-all duration-300 bg-white dark:bg-gray-900 grey:bg-greytheme">
+  <h1 className="text-2xl font-bold text-blue-600 dark:text-white grey:text-white cursor-pointer" onClick={()=>navigate("/")}>Exoroo</h1>
 
-      {/* Desktop Menu */}
-      <div className="hidden md:flex space-x-4">
-        <button className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition" onClick={()=>navigate("/addpost")}>
-          ➕ Add Post
-        </button>
-        <button
-          onClick={toggleTheme}
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-        >
-          {getLabel()}
-        </button>
-      </div>
 
-      {/* Mobile Menu Toggle */}
-      <div className="md:hidden">
-        <button onClick={() => setMenuOpen(!menuOpen)} className="text-white bg-blue-600 px-3 py-2 rounded">
-          ☰
-        </button>
-      </div>
+  <div className="hidden md:flex space-x-4">
+    <button
+      className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+      onClick={() => navigate("/addpost")}
+    >
+      ➕ Add Post
+    </button>
 
-      {/* Mobile Dropdown */}
-      {menuOpen && (
-        <div className="absolute top-16 right-4 bg-white dark:bg-gray-800 grey:bg-greytheme border rounded shadow-md p-4 space-y-3 z-50 md:hidden">
-          <button className="w-full text-left px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition">
-            ➕ Add Post
-          </button>
-          <button
-            onClick={toggleTheme}
-            className="w-full text-left px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-          >
-            {getLabel()}
-          </button>
-        </div>
-      )}
-    </nav>
+    <button
+      onClick={toggleTheme}
+      className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+    >
+      {getLabel()}
+    </button>
+
+    <button
+      onClick={() => navigate("/profile")}
+      className="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition"
+    >
+      👤 Profile
+    </button>
+  </div>
+
+
+  <div className="md:hidden">
+    <button onClick={() => setMenuOpen(!menuOpen)} className="text-white bg-blue-600 px-3 py-2 rounded">
+      ☰
+    </button>
+  </div>
+
+
+  {menuOpen && (
+    <div className="absolute top-16 right-4 bg-white dark:bg-gray-800 grey:bg-greytheme border rounded shadow-md p-4 space-y-3 z-50 md:hidden">
+      <button
+        onClick={() => navigate("/addpost")}
+        className="w-full text-left px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+      >
+        ➕ Add Post
+      </button>
+
+      <button
+        onClick={toggleTheme}
+        className="w-full text-left px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+      >
+        {getLabel()}
+      </button>
+
+      <button
+        onClick={() => navigate("/profile")}
+        className="w-full text-left px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition"
+      >
+        👤 Profile
+      </button>
+    </div>
+  )}
+</nav>
+
   );
 };

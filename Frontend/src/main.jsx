@@ -6,11 +6,15 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { MainPage } from './pages/MainPage.jsx';
 import { AddpostPAge } from './pages/AddpostPAge.jsx';
 import { ToastContainer } from 'react-toastify';
+import { ProfilePage } from './pages/ProfilePage.jsx';
 const router = createBrowserRouter([
 {
   path:"/",element:<MainPage/>
 },
-{path:"/addpost",element:<AddpostPAge/>}
+{path:"/addpost",element:<AddpostPAge/>},
+{
+  path:"/profile",element:<ProfilePage/>
+}
 ])
 
 

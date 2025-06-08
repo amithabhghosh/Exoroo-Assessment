@@ -6,7 +6,7 @@ const postRoute = require("./Routes/postRoute");
 const userRoute = require("./Routes/userRoute");
 require("dotenv").config();
 
-// ✅ Connect to MongoDB
+
 const connectDb = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI, {
@@ -20,7 +20,7 @@ const connectDb = async () => {
   }
 };
 
-// ✅ CORS middleware — must come BEFORE routes
+
 app.use(cors({
   origin: "http://localhost:5173",
   methods: ["GET", "POST", "PUT", "DELETE"],
@@ -29,11 +29,10 @@ app.use(cors({
 
 app.use(express.json());
 
-// ✅ Your routes
 app.use("/api/posts", postRoute);
 app.use("/api/user", userRoute);
 
-// ✅ Start server
+
 connectDb();
 app.listen(5000, () => {
   console.log("Server Connected");
